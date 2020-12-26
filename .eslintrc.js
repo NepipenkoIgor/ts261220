@@ -18,6 +18,7 @@ module.exports = {
     ],
     "rules": {
         "quotes": ["error", "single"],
-        "@typescript-eslint/no-inferrable-types": 0
+        "@typescript-eslint/no-inferrable-types": 0,
+        "prefer-const": "off"
     }
 };

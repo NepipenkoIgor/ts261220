@@ -1,50 +1,55 @@
-let d: 1 | 2 | 3 | 4 | 5;
-d = 10;
-d = 1;
-d = 5;
+function fn(a: any, b: any) {
 
-let color: 'red' | 'orange' | 'green';
-
-color = 'yellow';
-color = 'red';
-
-type Direction = 'in' | 'out';
-type AnimationType = 'ease'
-
-interface IOptions {
-    delay: number;
-    easing: `${AnimationType}-${Direction}`;
 }
 
+fn(1, 'sda');
+fn('asd', 1);
 
-function animate(_options: IOptions) {
+
+// Interface/Type/Function/Class
+interface IAccount<GeneralInformation extends { age: number }, Id = string> {
+    id: Id,
+    name: string,
+    info: GeneralInformation
 }
 
-
-animate({delay: 1000, easing: 'ease-out'})
-
-
-/*****/
-
-interface IFact {
-    factId: number;
-    userFrom: string;
-    userTo: true
-}
-
-const dataList: { action: string, data: IFact }[] = [];
-
-const uniqueValue = (): keyof IFact => {  // 'factId' | 'userFrom' | 'userTo'
-    return 'factId'
-}
-
-dataList.map((item: { action: string, data: IFact }) => {
-        if (item.data[uniqueValue()]) {
-
-        }
-        return item;
+let user: IAccount<{ age: number }, number> = {
+    id: 1,
+    name: 'Ihor',
+    info: {
+        age: 34
     }
-)
+}
+
+let admin: IAccount<{ age: number, subject: string[] }> = {
+    id: 'asdads123123',
+    name: 'Lena',
+    info: {
+        age: 34,
+        subject: ['ts', 'angular', 'js']
+    }
+}
+
+let arr: Array<number>
 
 
-const id: IFact[ keyof IFact] = true; // number |  string | true
+// class Model<ModelValue> {
+//     value!: ModelValue;
+// }
+//
+// interface Provider {
+//     model: typeof Model<number>
+// }
+//
+// let p: Provider = {
+//     model: Model
+// }
+
+
+const enum TooltipPosition {
+    BOTTOM = 'bottom',
+    TOP = 'top',
+    RIGHT = 'right'
+}
+
+let key:  (typeof TooltipPosition)[keyof (typeof TooltipPosition)] = TooltipPosition.TOP;
