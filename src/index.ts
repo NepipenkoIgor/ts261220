@@ -1,11 +1,50 @@
-import { speakLikeSloth1 } from './module-1';
-import { speakLikeSloth2 } from './module-2';
-import { speakLikeSloth3 } from './module-3';
-import { speakLikeSloth4 } from './module-4';
-import { speakLikeSloth5 } from './module-5';
+let d: 1 | 2 | 3 | 4 | 5;
+d = 10;
+d = 1;
+d = 5;
 
-speakLikeSloth1(['Hi', 'All', 'TS', 'is', 'awesome']);
-speakLikeSloth2(['Hi', 'All', 'TS', 'is', 'awesome']);
-speakLikeSloth3(['Hi', 'All', 'TS', 'is', 'awesome']);
-speakLikeSloth4(['Hi', 'All', 'TS', 'is', 'awesome']);
-speakLikeSloth5(['Hi', 'All', 'TS', 'is', 'awesome']);
+let color: 'red' | 'orange' | 'green';
+
+color = 'yellow';
+color = 'red';
+
+type Direction = 'in' | 'out';
+type AnimationType = 'ease'
+
+interface IOptions {
+    delay: number;
+    easing: `${AnimationType}-${Direction}`;
+}
+
+
+function animate(_options: IOptions) {
+}
+
+
+animate({delay: 1000, easing: 'ease-out'})
+
+
+/*****/
+
+interface IFact {
+    factId: number;
+    userFrom: string;
+    userTo: true
+}
+
+const dataList: { action: string, data: IFact }[] = [];
+
+const uniqueValue = (): keyof IFact => {  // 'factId' | 'userFrom' | 'userTo'
+    return 'factId'
+}
+
+dataList.map((item: { action: string, data: IFact }) => {
+        if (item.data[uniqueValue()]) {
+
+        }
+        return item;
+    }
+)
+
+
+const id: IFact[ keyof IFact] = true; // number |  string | true
