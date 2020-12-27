@@ -35,3 +35,7 @@ function sendUpdates(emailAddr: string | string[]) {
     }
 }
 
+
+[1, 2, 3, 4].reduce<any>((acc, el) => {
+    return {...acc, [`key${el}`]: el}
+}, {})

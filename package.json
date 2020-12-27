@@ -4,7 +4,7 @@
   "description": "",
   "main": "old/base/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start",
     "start": "webpack serve --config ./webpack.conf.js",
     "build": "webpack --config ./webpack.conf.js"
   },
@@ -12,11 +12,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jasmine": "^3.6.2",
     "@types/jquery": "^3.5.5",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
     "eslint": "^7.16.0",
     "html-webpack-plugin": "^4.5.0",
+    "jasmine-core": "^3.6.0",
+    "karma": "^5.2.3",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-typescript": "^5.2.0",
     "ts-loader": "^8.0.12",
     "ts-node": "^9.1.1",
     "tslib": "^2.0.3",

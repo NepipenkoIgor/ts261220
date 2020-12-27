@@ -1,24 +1,17 @@
-import { generateMenu } from './menu';
-import { list } from './menu/data';
+interface IUser {
+    name: string;
+    surname: string;
+}
 
-$('.menu')
-    .html(generateMenu(list))
-    .on('click', (e: Event) => {
-        const el: HTMLElement = e.target as HTMLElement;
-        if (!el.classList.contains('title')) {
-            return;
-        }
-        const parentLi: HTMLLIElement = el.parentElement as HTMLLIElement;
-        parentLi.classList.toggle('menu-open')
-    })
+function getFullName(this: IUser) {
+    return `${this.name} ${this.surname}`;
+}
 
-// const menuNav: HTMLDivElement = document.querySelector('.menu') as HTMLDivElement;
-// menuNav.innerHTML = generateMenu(list);
-// menuNav.addEventListener('click', (e: MouseEvent) => {
-//     const el: HTMLElement = e.target as HTMLElement;
-//     if (!el.classList.contains('title')) {
-//         return;
-//     }
-//     const parentLi: HTMLLIElement = el.parentElement as HTMLLIElement;
-//     parentLi.classList.toggle('menu-open')
-// })
+
+let account = {
+    name: 'Ihor',
+    surname: 'Nepipenko',
+    getFullName
+}
+
+account.getFullName();
