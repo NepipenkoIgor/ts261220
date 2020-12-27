@@ -20,7 +20,11 @@ module.exports = {
                         configFile: path.resolve(__dirname, 'tsconfig.app.json'),
                     },
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
         ]
     },
     plugins: [
