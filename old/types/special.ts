@@ -10,6 +10,21 @@ unkType['n'] = 2;
 unkType = 1;
 unkType();
 
+
+let objType: object = {};
+objType.a = 1;
+objType['n'] = 2;
+objType();
+objType = 1;
+
+
+Object.create(objType)
+
+
+
+
+
+
 let vd: void = undefined;
 vd = 1;
 
